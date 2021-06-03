@@ -1,0 +1,188 @@
+<%- include('../partials/headerlog.ejs') %>
+
+  <script src="/home.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="/stylesheets/movie.css">
+
+  <div class="cinema-show">
+
+    <div class="part-movie">
+      <p class="movie-head">Movie</p>
+      <button id="sub-now" class="showing-movie decoration">Now showing</button>
+      <button id="sub-come" class="coming-movie decoration">Coming soon</button>
+      <hr class="line line-edit">
+    </div>
+  </div>
+
+  <div id="now-showing">
+
+    <div class="dropdown dropdown-2">
+      <a class="btn  dropdown-toggle btn-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <% if ( sort=='All' ) { %>
+          &ensp; Genre
+          <% } else { %>
+            &ensp; Sort by : <%= sort %>
+              <% } %>
+                <!-- --- Sorting --- -->
+      </a>
+
+      <ul class="dropdown-menu  " aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item " href="/movie">All</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/action">Action</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/fantasy">Fantasy</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/horror">Horror</a></li>
+        <li><a class="dropdown-item " href="#">Genre</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="now-showing">
+      <div class="album py-5">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <!-- picture and detail -->
+
+            <% movie.forEach(function(movie){ %>
+              <div class="col">
+                <a href="/movie/<%= movie._id %>" class="none-decoration">
+                  <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                    <img src="<%= movie.image %>" class="card-img-top">
+                    <div class="card-body bg-dark">
+                      <h5 class="card-title"><span>
+                          <%= movie.name %>
+                        </span></h5>
+                      <p class="card-text"><span>Release Date: <%= movie.date %></span></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <% }); %>
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="coming-soon" class="hidden">
+
+    <div class="dropdown dropdown-2">
+      <a class="btn  dropdown-toggle btn-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <% if ( sort=='All' ) { %>
+          &ensp; Genre
+          <% } else { %>
+            &ensp; Sort by : <%= sort %>
+              <% } %>
+                <!-- --- Sorting --- -->
+      </a>
+
+      <ul class="dropdown-menu  " aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item " href="/movie">All</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/action">Action</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/fantasy">Fantasy</a></li>
+        <li><a class="dropdown-item " href="/movie/genre/horror">Horror</a></li>
+        <li><a class="dropdown-item " href="#">Genre</a></li>
+      </ul>
+    </div>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <!-- picture and detail -->
+
+          <% moviecom.forEach(function(movie){ %>
+            <div class="col">
+              <a href="/movie/<%= movie._id %>" class="none-decoration">
+                <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                  <img src="<%= movie.image %>" class="card-img-top">
+                  <div class="card-body bg-dark">
+                    <h5 class="card-title"><span>
+                        <%= movie.name %>
+                      </span></h5>
+                    <p class="card-text"><span>Release Date: <%= movie.date %></span></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <% }); %>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Welcome To uCollection!</h1>
+        <p class="lead text-muted">View statue collections from collectors around the world!</p>
+        <p>
+          <a href="/movie/new" class="btn btn-primary my-2">Add new collection</a>
+        </p>
+      </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-dark">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% movie.forEach(function(movie){  %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src='<%= movie.image %>' class='card-img-top' height="600px">
+
+            <div class="card-body"> 
+               <h5 class = 'card-title'><%= movie.name %></h5> 
+              <p class="card-text"><%= movie.date %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/movie/<%= movie._id %>" class="btn btn-sm btn-outline-secondary">View</a>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div> -->
+
+  <%- include('../partials/footer.ejs') %>

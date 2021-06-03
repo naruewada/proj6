@@ -1,0 +1,108 @@
+<%- include('partials/headerlog.ejs') %>
+
+<script src="/home.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/stylesheets/mypage.css">
+
+
+    <div class="cinema-show">
+
+        <div class="alert alert-success mypage-background" role="alert">
+            <p class="movie-head">MY PROFILE</p>
+            <p><i class="fa fa-user mypage-usericon"></i></p>
+            <p class="user-detail"><span class="mypage-edit">Username : </span><br>
+                <span class="mypage-edit">First name : </span><br>
+                <span class="mypage-edit">Last name : </span><br><br>
+                <a href="#"><button class="mypage-edit-button"><i class="fa fa-edit"></i>Edit</button></a>
+            </p>
+            <hr class="line">
+        </div>
+        <div class="alert alert-success mypage-background" role="alert">
+            <button id="sub-now" class="showing-movie decoration">Movie history</button>
+            <button id="sub-come" class="coming-movie decoration">My favorite movie</button>
+        </div>
+
+
+        <div id="now-showing">
+
+
+            <div class="alert alert-success mypage-background" role="alert">
+                <div class="album py-5">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div class="col">
+                                <div class="card shadow-sm bg-dark" style="width: 12rem;">
+                                    <img src="https://images.workpointnews.com/workpointnews/2021/03/30180324/1617102185_98247_S__219250743.jpg"
+                                        class="card-img-top">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="history-block">
+                    <p class="history-name-movie">Godzilla VS Kong</p>
+                    <p>Time :</p>
+                    <p>Cinema :</p>
+                    <p>Seat no. :</p>
+                </div><br>
+                <hr class="line">
+            </div>
+
+            
+
+
+        </div>
+
+        <div id="coming-soon" class="hidden">
+
+            <div class="album py-5">
+                <div class="container">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        
+                    <!-- picture and detail -->
+        
+                    <% if ( movie.likes == 0 ) {  %>
+                      &ensp; <p class="dont-like"> You don't have a movie in your favorite. Let's add a movie to your favorite! </p> 
+                  <% } else {  %>
+                      <% movie.likes.forEach(function(liked){ %>
+                          <div class="col">
+                              <a href="/movie/<%= liked.movies.id %>" class="detail">
+                                  <div class="card shadow-sm" style="width: 16rem;">
+                                      <img src="<%= liked.movies.image %>" class="card-img-top">
+                                      <div class="card-body">
+                                          <h5 class="card-title">
+                                              <%= liked.movies.name %>
+                                          </h5>
+                                          <p class="card-text">
+                                              <%= liked.date %>
+                                          </p>
+                                      </div>
+                                  </div>
+                              </a>
+                          </div>
+                      <% }); %>
+                  <% } %>
+        
+                    
+
+                
+                
+
+        </div>
+        
+    </div>
+        
+        
+        
+                    
+        
+        
+                   
+        
+        
+               
+
+   
+<%- include('partials/footer.ejs') %>

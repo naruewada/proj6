@@ -1,0 +1,16 @@
+.container{
+    margin-top: 90px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.form-label{
+    color: white;
+    font-size: 1.2em;
+}
+.btn-primary{
+    margin-left: 120px;
+    margin-right: 20px;
+}
+.dec-1{
+    color: white;
+}

@@ -1,0 +1,222 @@
+body{
+    background-color: black;
+}
+.w-100{
+    height: 450px;
+}
+.col-1{
+    margin-left: -0px; 
+}
+
+.col{
+    margin-top: 60px;
+    width: 240px;
+    margin-left: 75px;
+    
+}
+.card{
+    border: 1px solid gray;
+}
+.album{
+    width: 98%;
+    margin-top: -50px;
+    padding-left: 150px;
+    margin-left: 15px;
+    
+    
+}
+
+
+#coming-soon{
+    margin-left: -90px;
+    margin-top: 50px;
+    font-family: 'Kanit';
+    
+}
+#now-showing{
+    margin-left: -90px;
+    margin-top: 50px;
+   
+}
+.select,.option{
+    border: none;
+    background: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0; 
+    cursor: pointer;
+}
+.select{
+    width: 200px;
+    height: 32px;
+    padding-left: 10px;
+    outline: solid transparent;
+    font-size: 1.1em;
+    color: rgb(25, 68, 150);
+    outline: none;
+    border: none;
+    border-bottom: 2px solid yellow;
+    margin-left: 50px;
+}
+.option{
+    background: black;
+    padding-left: 5px;
+    text-align: center;
+   
+}
+.part-movie{
+    font-family: 'Kanit';
+    margin: 0 auto;
+    width: 28%;
+    margin-top: 70px;
+}
+.movie-head{
+    width: 30%;
+    margin: 0 auto;
+    font-size:  3.0em ;
+    font-weight: bold;
+    color: rgb(48, 126, 228); 
+    text-shadow: 2px 2px 2px rgb(243, 228, 141);
+    margin-bottom: 40px;
+}
+.decoration{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0,0,0,0);
+    margin-left: 60px;
+    height: 60px;
+    border: 0;
+    
+}
+.decoration:hover{
+    color:rgb(48, 186, 228);
+    
+}
+.coming-movie{
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgb(150, 143, 143);
+    height: 60px;
+}
+.showing-movie{
+     font-size: 1.4em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgb(150, 143, 143);
+     
+   
+}
+.decoration_1{
+    color:rgb(48, 186, 228);
+    border-bottom: 3px solid rgb(48, 186, 228);
+    
+}
+
+.line{
+    height: 20px;
+    font-size: 0;
+    margin-top: -2px;
+    border: 1px solid whitesmoke;
+}
+.line-1{
+    width: 50%;
+    height: 20px;
+    font-size: 0;
+    margin-top: -2px;
+    border: 1px solid whitesmoke;
+    margin-left: 390px;
+}
+.hidden{
+    display: none;
+}
+
+.card-title{
+    color: #e6bb67;
+    font-weight: bold;
+    font-family: 'Kanit';
+}
+.card-text{
+    font-weight: bold;
+    font-size: 0.9em;
+    color: white; 
+    font-family: 'Kanit';
+    
+}
+.none-decoration{
+    text-decoration: none;
+}
+.top-5-movie{
+    margin-top: 45px;
+    height: 1000px;
+}
+.box-office{
+    background-image: linear-gradient(270deg,rgb(22, 186, 236)5%,rgb(40, 125, 236) 39% );
+    font-size: 2.6em;
+    font-weight: bold;
+    text-align:  center;
+    width: 20%;
+    font-family: 'Kanit';
+    margin: 0 auto;
+    text-shadow: 2px 2px 2px black;
+    border-radius: 0px 0px 40px 40px;
+    box-shadow: 2px 2px 5px white;
+    color:white;
+    margin-bottom: 60px;
+}
+.rank{
+    font-size: 15.0em;
+    -webkit-text-stroke: 5px  #e6bb67;
+    color: black;
+    text-shadow: 3px 3px 8px white;
+    margin-top: -460px;
+    margin-left: -100px;
+    padding-left: 22px;
+    position: relative;
+    font-family: 'Tahoma';
+    width: 100%;
+    height: 450px;
+    
+}
+.space{
+    margin: 0 auto;
+    
+}
+.album-1{
+    margin: 0 auto;
+}
+.form-cinema{
+    margin: 0 auto;
+    width: 65%;
+    
+}
+.form-cinema>.select{
+    background: transparent;
+    color: yellow
+}
+.dropdown-2{
+    
+    margin-left: 265px;
+}
+.btn-2{
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    color: yellow;
+    border-bottom: 2px solid yellow;
+   
+}
+.btn-2:focus{
+    background-color: black;
+    box-shadow: none;
+    color: yellow;
+    border-bottom: 2px solid yellow;
+   
+}
+.btn-2:hover{
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    color: yellow;
+    border-bottom: 2px solid yellow;
+   
+}

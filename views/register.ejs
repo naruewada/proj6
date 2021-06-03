@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs') %>
+<link rel= "stylesheet" href="stylesheets/register.css">
+<div id="form">
+    <div id="inside-form">
+        <h1 id="head">Sign up</h1>
+        <form method="POST" action='/register'>
+            <input type="text" placeholder="firstname" name='firstname'class="input" ><br>
+            <input type="text" placeholder="Lastname" name='lastname' class="input"><br>
+            <input type="email" placeholder="Email" name='username' class="input"><br>
+            <input type="password" placeholder="Password" name="password" a class="input"><br>
+            <input type="submit" value="Sign Up" id="submit" class="submit">
+        </form>
+        <span class="one" id="alredy">Already have an account?</span> <a href="/login" class="two">Login here.</a>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

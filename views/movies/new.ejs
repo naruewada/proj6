@@ -1,0 +1,49 @@
+<%- include('../partials/header.ejs') %>
+<div class='container'>
+<form action='/movie' method='POST'>
+    <div class="mb-3">
+      <label class="form-label"><Map>Movie name</Map></label>
+      <input type="text" class="form-control" name='name' placeholder='Name'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Image URL</label>
+      <input type="text" class="form-control" name='image' placeholder='URL'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Date</label>
+      <input type="text" class="form-control" name="date" placeholder='date'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Rating</label>
+      <input type="text" class="form-control" name="rating" placeholder='rating'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Director</label>
+      <input type="text" class="form-control" name="director" placeholder='director'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Rate</label>
+      <input type="text" class="form-control" name="rate" placeholder='rate'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">time</label>
+      <input type="text" class="form-control" name="time" placeholder='time'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">trailer</label>
+      <input type="text" class="form-control" name="trailer" placeholder='trailer'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Genre</label>
+      <input type="text" class="form-control" name="genre" placeholder='trailer'>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Genre</label>
+      <input type="text" class="form-control" name="type" placeholder='type'>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href='/movie'>Go back</a>
+  </form>
+</div>
+
+<%- include('../partials/footer.ejs') %>

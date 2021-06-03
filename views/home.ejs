@@ -1,0 +1,205 @@
+<%- include('partials/header.ejs') %>
+<script src="home.js" defer></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../stylesheets/slide.css">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://gamingkush.com/wp-content/uploads/2020/06/timothy-dries-keyart-thumbnail.jpg"
+        class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.ytimg.com/vi/BEFEbPbM2Zc/maxresdefault.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="http://xn--72czpba5eubsa1bzfzgoe.video/wp-content/uploads/2020/06/%E0%B8%94%E0%B8%B9%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C-Godzilla-Vs.-Kong-2020.jpg"
+        class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+ <div class="cinema-show">
+    <form method="POST" name="mycenima" class="form-cinema">
+      <select name="cinema" class="select">
+        <option selected class="option">select-cinema</option>
+        <option value="cinema_1" class="option">Cinema-1</option>
+        <option value="cinema_2" class="option">Cinema-2</option>
+        <option value="cinema_3" class="option">Cinema-3</option>
+        <option value="cinema_4" class="option">Cinema-4</option>
+        <option value="cinema_5" class="option">Cinema-5</option>
+      </select>
+      <select name="movie" class="select">
+        <option selected class="option">select-movie</option>
+        <option value="movie_1" class="option">movie-1</option>
+        <option value="movie_2" class="option">movie-2</option>
+        <option value="movie_3" class="option">movie-3</option>
+        <option value="movie_4" class="option">movie-4</option>
+        <option value="movie_5" class="option">movie-5</option>
+        <input type="submit" value="SHOWTIME" class="submit">
+      </select>
+      
+    </form>
+  </div>
+
+  <div class="part-movie">
+    <p class="movie-head">Movie</p>
+    <p class="movie-head-1">
+      <button id="sub-now" class="showing-movie decoration-1">Now showing</button>
+      <button id="sub-come" class="coming-movie decoration">Coming soon</button>
+    </p>
+    <hr class="line line-edit">
+  </div>
+  <div id="now-showing">
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <!-- picture and detail -->
+          <% movie.forEach(function(movie){  %>
+          <div class="col">
+            <a href="/movie/<%= movie._id %>" class="none-decoration">
+              <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                <img
+                  src="<%= movie.image %>"
+                  class="card-img-top">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title"><span><%= movie.name %></span></h5>
+                  <p class="card-text"><span>Release Date: <%= movie.date %></span></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <% }); %>
+       
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="coming-soon" class="hidden">
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <!-- picture and detail --> 
+
+            <% moviecom.forEach(function(movie){  %>
+          <div class="col">
+            <a href="/movie/<%= movie._id %>" class="none-decoration">
+              <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                <img
+                  src="<%= movie.image %>"
+                  class="card-img-top">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title"><span><%= movie.name %></span></h5>
+                  <p class="card-text"><span>Release Date: <%= movie.date %></span></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <% }); %>
+
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- top 5 movie(rank) -->
+  <div id="top-5-movie" class="top-5-movie">
+    <hr class="line-1"><br>
+    <p class="box-office">Box Office</p>
+
+
+    <div class="album py-5 album-1">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> 
+
+          <!-- picture and detail -->
+           <!-- <div class="col space">
+            <a href="/showtime" class="none-decoration ">
+              <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                <img
+                  src="https://images.workpointnews.com/workpointnews/2021/03/30180324/1617102185_98247_S__219250743.jpg"
+                  class="card-img-top">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title">Godzilla</h5>
+                  <p class="card-text">วันที่ฉาย : 2021-05-04</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </a>
+            <p class="rank">1</p>
+          </div> -->
+
+          
+
+          <% var i = 1; Ranks.forEach(function(movie){  %>
+            <div class="col">
+              <a href="/movie/<%= movie._id %>" class="none-decoration">
+                <div class="card shadow-sm bg-dark" style="width: 14.3rem;">
+                  <img
+                    src="<%= movie.image %>"
+                    class="card-img-top">
+                  <div class="card-body bg-dark">
+                    <h5 class="card-title"><span><%= movie.name %></span></h5>
+                    <p class="card-text"><span>Release Date: <%= movie.date %></span></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <p class="rank"><%= i %></p>
+            </div>
+            <% i++; }); %>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+ </div>
+
+
+<%- include('partials/footer.ejs') %>

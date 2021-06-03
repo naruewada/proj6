@@ -1,0 +1,105 @@
+body
+{
+    font-family: 'Kanit';
+    background-color:black;
+}
+.form-search{
+    background-color: rgb(210, 240, 252);
+    height: 100px;
+    padding-left: 220px;
+    padding-top: 30px;
+}
+
+.select{
+    background: transparent;  
+}
+
+.option{
+    background: rgb(210, 240, 252);
+    padding-left: 5px;
+    text-align: center;
+    border-bottom: 2px solid rgb(25, 68, 150)
+}
+
+.submit{
+    margin-left: 50px;
+    background-image: linear-gradient(270deg,rgb(22, 186, 236)5%,rgb(40, 125, 236) 39% );
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.select,.option{
+    border: none;
+    background: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0; 
+    cursor: pointer;
+}
+.select{
+    background: rgb(210, 240, 252);
+    width: 350px;
+    height: 32px;
+    padding-left: 10px;
+    outline: solid transparent;
+    font-size: 1.1em;
+    color: rgb(25, 68, 150);
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(25, 68, 150);
+    margin-left: 50px;
+}
+.option{
+    background: rgb(210, 240, 252);
+    padding-left: 5px;
+    text-align: center;
+    border-bottom: 2px solid rgb(25, 68, 150)
+}
+
+.total-ul{
+    text-align: center;
+}
+.total-ul>.li{
+    display: inline-block;
+}
+.total-ul>.li .fa{
+            background-color: #ccc;
+            width:50px ;
+            height: 50px;
+            color: #fff;
+            border-radius: 50%;
+            padding: 13px;
+        
+}
+.total-ul>.li>a>.fa::after{
+            content: '';
+            background-color: #ccc;
+            height: 5px;
+            width: 630px;
+            display: block;
+            position: absolute;
+            left: 500px;
+            top: 265px;
+            z-index:-1 ;      
+}
+.li{
+    margin-left: 140px;
+}
+.total-ul>.li:nth-child(3) .fa{
+   background-color: #1469ca;
+}
+.total-ul> .li:nth-child(1) .fa,
+.total-ul> .li:nth-child(2) .fa
+ {
+            background-color: #9ec5f1;
+ }
+.fa-check{
+    font-size: 1.4em;
+}
+.show-time{
+    padding-top: 35px;
+    margin-left: -129px;
+     background-color:rgba(250, 250, 250, 0.3);
+}

@@ -1,0 +1,58 @@
+<%- include('../partials/headerlog.ejs') %>
+  <link rel="stylesheet" href="/stylesheets/moviedetail.css">
+  <h1>
+    <%= movie.name %>
+  </h1>
+
+  <img src="<%= movie.image %>" style="width: 13rem;">
+
+  <p>
+    <%= movie.date %>
+  </p>
+
+  <p class="comments">comment </p>
+  <% movie.comments.forEach(function(comment){ %>
+    <p class="dec-2">
+      <i class="fa fa-dot-circle"></i><strong>
+        <%= comment.author.username %>
+      </strong> : <%= comment.text %>
+        <hr>
+    </p>
+    <% }); %>
+
+    <% if(!currentUser) { %>
+      <form action="/login" method="POST">
+          <button type="submit" class="fav-none-login"><i class="far fa-heart" id="like"></i></button>
+      </form>
+  <% } else { %>
+  <div class="container-fluid mt-3" style="height: 50px;">
+      <!-- function for check that user like or not -->
+      <% var match = 0; var like_id = ''; %>
+      <% currentUser.likes.forEach(function(liked){ if ( liked.movies.id == movie.id ) { match = 1; like_id = liked._id; } }); %>
+      <% if( match == 1 ) { %>
+          <form action="/movie/<%= like_id %>/unlike" method="POST">
+              <button type="submit" class="fav"><i class="fa fa-heart" id="unlike"></i></button>
+          </form>
+      <% } else { %>
+          <form action="/movie/<%= movie._id %>/like" method="POST">
+              <button type="submit" class="fav"><i class="far fa-heart" id="like"></i></button>
+          </form>
+      <% } %>
+  </div>
+  <% } %>
+
+      <div class='container'>
+        <form action='/movie/<%= movie._id %>/comments' method='POST'>
+          <!-- <div class="mb-3">
+          <label class="form-label">Author</label>
+          <input type="text" class="form-control" name='comment[author]' placeholder='Your username'>
+        </div>
+        <div class="mb-3"> -->
+          <label class="form-label">Comment</label>
+          <input type="text" class="form-control" name='comment[text]' placeholder='Comment'>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="dec-1" href='/movie/<%= movie._id %>'>Go back</a>
+      </form>
+      </div>
+      <%- include('../partials/footer.ejs') %>

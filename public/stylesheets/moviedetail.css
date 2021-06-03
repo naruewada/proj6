@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+    color: white;
+}
+.btn-primary{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+.comments{
+    margin-left: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: yellow;
+}
+strong{
+    margin-left: 20px;
+    color: skyblue;
+}
+.fa-dot-circle{
+    margin-left: 20px;
+    color: orange;
+}
+.dec-2{
+    font-size: 1.3em;
+}
